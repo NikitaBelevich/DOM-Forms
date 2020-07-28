@@ -7,3 +7,25 @@ body {
   font-size: 1.1rem;
   background-color: #e4e4e4;
 }
+
+.editArea {
+  padding: 5px;
+  width: 350px;
+  height: 150px;
+  border: 1px solid #000;
+}
+
+.editTextarea {
+  padding: 5px;
+  width: 350px;
+  height: 150px;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  border: 1px solid #000;
+}
+
+.editTextarea:focus {
+  padding: 3px;
+  border: 3px solid blue;
+  outline: none;
+}
