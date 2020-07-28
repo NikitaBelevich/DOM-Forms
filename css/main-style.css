@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body {
   font-family: sans-serif;
 }
@@ -28,4 +29,77 @@ body {
   padding: 3px;
   border: 3px solid blue;
   outline: none;
+}
+
+/* общие стили для таблицы, изменять их не нужно */
+th {
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  width: 150px;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.nw {
+  background-color: #999;
+}
+
+.n {
+  background-color: #03f;
+  color: #fff;
+}
+
+.ne {
+  background-color: #ff6;
+}
+
+.w {
+  background-color: #ff0;
+}
+
+.c {
+  background-color: #60c;
+  color: #fff;
+}
+
+.e {
+  background-color: #09f;
+  color: #fff;
+}
+
+.sw {
+  background-color: #963;
+  color: #fff;
+}
+
+.s {
+  background-color: #f60;
+  color: #fff;
+}
+
+.se {
+  background-color: #0c3;
+  color: #fff;
+}
+
+.textarea-in-cell {
+  display: block;
+  padding: 3px 0 0 3px;
+  width: 165px;
+  height: 100px;
+  resize: none;
+  border: none;
+}
+
+.textarea-in-cell:focus {
+  outline: none;
+}
+
+.control-buttons {
+  position: absolute;
 }
