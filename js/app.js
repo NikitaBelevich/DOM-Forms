@@ -89,3 +89,45 @@ function editBaguaCell(event) {
         }
     }
 }
+
+// Task 3. Двигаем мышь
+const mouse3 = document.querySelector('#mouse');
+mouse3.addEventListener('focus', function(e) {
+    const mouseCoordinates = this.getBoundingClientRect();
+    const mouseTop = mouseCoordinates.top + pageYOffset;
+    // Спозиционировали там, где она изначально стояла
+    this.style.cssText = `
+                position: absolute;
+                left: ${mouseCoordinates.left}px;
+                top: ${mouseTop}px;
+    `;
+
+    // Логика передвижения мыши
+    this.addEventListener('keydown', moovingMouse);
+    function moovingMouse(e) {
+        e.preventDefault();
+        switch (e.code) {
+            case 'ArrowUp':
+                this.style.top = parseInt(this.style.top) - 8 + 'px';
+                break;
+
+            case 'ArrowDown':
+                this.style.top = parseInt(this.style.top) + 8 + 'px';
+                break;
+            case 'ArrowLeft':
+                this.style.left = parseInt(this.style.left) - 8 + 'px';
+                break;
+            case 'ArrowRight':
+                this.style.left = parseInt(this.style.left) + 8 + 'px';
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    this.onblur = () => {
+        this.removeEventListener('keydown', moovingMouse);
+    };
+});
+

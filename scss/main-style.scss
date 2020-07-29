@@ -101,3 +101,14 @@ th {
 .control-buttons{
     position: absolute;
 }
+
+#mouse{
+    display: inline-block; 
+    cursor: pointer; 
+    margin: 0;
+    border: 1px solid transparent;
+    &:focus{
+        outline: none;
+        border: 1px dashed rgb(211, 16, 185);
+    }
+}
