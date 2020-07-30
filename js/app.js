@@ -61,7 +61,7 @@ function editBaguaCell(event) {
         document.body.append(controllingContainer);
         controllingContainer.style.cssText = `
                     left: ${cellCoordinates.left}px;
-                    top: ${cellCoordinates.bottom}px;
+                    top: ${cellCoordinates.bottom + pageYOffset}px;
         `;
 
         // Логика кнопки ОК
