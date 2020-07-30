@@ -118,6 +118,47 @@
         </div>
     </div>
 
+    <hr>
+
+    <div>
+        <p>Task 4. Создайте интерфейс, позволяющий ввести сумму банковского вклада и процент, а затем рассчитать, какая это будет сумма через заданный промежуток времени.</p>
+        <div class="task4">
+            <b>Депозитный калькулятор.</b>
+            <form action="#" class="deposit-calculator">
+                <fieldset>
+                    <label>Первоначальный депозит</label>
+                    <input type="number" value="10000" name="deposit-field">
+                </fieldset>
+
+                <fieldset>
+                    <label>Срок вклада?</label>
+                    <select name="time-of-deposit">
+                        <option value="3">3 (минимум)</option>
+                        <option value="6">6 (полгода)</option>
+                        <option value="12" selected>12 (год)</option>
+                        <option value="18">18 (1.5 года)</option>
+                        <option value="24">24 (2 года)</option>
+                        <option value="30">30 (2.5 года)</option>
+                        <option value="36">36 (3 года)</option>
+                        <option value="60">60 (5 лет)</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label>Годовая процентная ставка?</label>
+                    <input type="number" value="5" name="interest-rate">
+                </fieldset>
+
+                <fieldset>
+                    <div class="calculator-out">
+                        <div class="before">Было:<span></span></div>
+                        <div class="after">Станет:<span></span></div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
 
 
     <script src="js/app.js" defer></script>

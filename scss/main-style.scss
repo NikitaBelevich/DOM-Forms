@@ -112,3 +112,33 @@ th {
         border: 1px dashed rgb(211, 16, 185);
     }
 }
+
+.task4 {
+    font-size: 16px;
+}
+.deposit-calculator{
+    max-width: 500px;
+    & fieldset:not(:last-child){ // Кроме блока вывода значений
+        border: none;
+        margin: 0;
+        padding-bottom: 5px;
+        :last-child{ 
+            float: right;
+            width: 150px;
+        }
+        
+    }
+    input[type="number"]{
+        width: 142px !important; 
+    }
+}
+
+.calculator-out{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 700;
+    .before, .after {
+        min-width: 146px;
+    }
+}

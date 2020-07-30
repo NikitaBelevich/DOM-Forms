@@ -131,3 +131,25 @@ mouse3.addEventListener('focus', function(e) {
     };
 });
 
+
+// Task 4. Депозитный калькулятор
+calcDeposit();
+function calcDeposit() {
+    const calculatorForm = document.querySelector('.deposit-calculator');
+    const depositField = calculatorForm.elements['deposit-field'];
+    const timeOfDepositSelect = calculatorForm.elements['time-of-deposit'];
+    const interestRateField = calculatorForm.elements['interest-rate'];
+    const beforeOut = calculatorForm.querySelector('.calculator-out .before span');
+    const afterOut = calculatorForm.querySelector('.calculator-out .after span');
+
+    calculatorForm.addEventListener('change', (e) => {
+        const deposit = +depositField.value;
+        const timeOfDeposit = +timeOfDepositSelect.value;
+        const interestRate = +interestRateField.value;
+
+        const result = Math.round(deposit * (1 + (interestRate / 100) * (timeOfDeposit / 12)));
+        
+        beforeOut.textContent = ' ' + deposit;
+        afterOut.textContent = ' ' + result;
+    });
+}

@@ -115,3 +115,44 @@ td {
   outline: none;
   border: 1px dashed #d310b9;
 }
+
+.task4 {
+  font-size: 16px;
+}
+
+.deposit-calculator {
+  max-width: 500px;
+}
+
+.deposit-calculator fieldset:not(:last-child) {
+  border: none;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.deposit-calculator fieldset:not(:last-child) :last-child {
+  float: right;
+  width: 150px;
+}
+
+.deposit-calculator input[type="number"] {
+  width: 142px !important;
+}
+
+.calculator-out {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-weight: 700;
+}
+
+.calculator-out .before, .calculator-out .after {
+  min-width: 146px;
+}
