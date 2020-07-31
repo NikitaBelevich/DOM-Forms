@@ -142,3 +142,48 @@ th {
         min-width: 146px;
     }
 }
+
+.modal-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4px 8px 4px;
+    width: 280px;
+    z-index: 9999;
+    border: 1px solid #000;
+    background: #f1dfc9;
+    transition: opacity .3s ease-out;
+}
+.modal-container__body{
+    width: 65%;
+    max-width: 75%;
+}
+.modal-form {
+    text-align: center;
+    font-size: 14px;
+    > *:not(:last-child) {
+        margin-bottom: 6px;
+    }
+}
+.hide-modal{
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9000;
+    background-color: hsla(0, 0%, 11%, 0.62);
+    opacity: 0;
+    animation: eazy-show-modal .3s ease-out forwards;
+}
+@keyframes eazy-show-modal {
+    100% {opacity: 1;}
+}

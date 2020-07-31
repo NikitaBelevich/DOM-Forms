@@ -153,3 +153,79 @@ function calcDeposit() {
     beforeOut.textContent = ' ' + deposit;
     afterOut.textContent = ' ' + result;
 }
+
+
+const task5 = document.querySelector('.task5');
+const callAPopup = task5.querySelector('.call-popup');
+
+callAPopup.addEventListener('click', () => {
+    showPrompt('Введите что-нибудь<br>...умное :)', (value) => {alert(`Вы ввели: ${value}`)});
+});
+
+function showPrompt(htmlTitle, callback) {
+    showOverlay(); // Показали оверлей
+    const modalWindow = document.querySelector('.modal-container');
+    const modalForm = modalWindow.querySelector('form');
+    const formTitle = modalForm.querySelector('.form-title');
+    formTitle.innerHTML = htmlTitle; // Записали в заголовок переданную надпись
+    modalWindow.classList.toggle('hide-modal'); // Показали модалку
+    // Обработка кнопок
+    const modalInp = modalForm.querySelector('input[name="modal-input"]');
+    modalInp.focus();
+    modalForm.onsubmit = (e) => {
+        closeModal();
+        let value = modalInp.value.trim();
+        if (!value) { 
+            // Если значение пустое, тогда отменяем submit, выдаём ошибку
+            console.error('Value is empty');
+            e.preventDefault();
+            return false;
+        };
+        callback(value); // Отправили данные
+    };
+    // Кнопка отмена
+    const cancelButton = modalForm.querySelector('.form-buttons button:last-child');
+    cancelButton.onclick = (e) => {
+        e.preventDefault(); // Отменяем submit
+        cancelInput();
+    };
+    // Клавиши
+    document.onkeydown = (e) => {
+        if (e.code == 'Escape') {
+            cancelInput();
+        }
+    };
+    cancelButton.onkeydown = (e) => {
+        if (e.code == 'Tab') {
+            e.preventDefault();
+            modalInp.focus();
+        }
+    };
+
+
+
+    // Функция отмены отправки формы, выдаёт null как результат и закрывает модальное окно
+    function cancelInput() {
+        callback(null); // Выводим null
+        closeModal(); // Всё закрываем
+        document.onkeydown = null;
+        cancelButton.onkeydown = null;
+    }
+}
+
+// Функция создаёт оверлей при активном модальном окне
+function showOverlay() {
+    const cover = document.createElement('div');
+    cover.classList.add('modal-overlay');
+    document.body.append(cover); // включили оверлей
+    document.body.style.overflowY = 'hidden'; // скрыли прокрутку
+}
+// Функция удаляет оверлей и скрывает модальное окно
+function closeModal() {
+    const cover = document.querySelector('.modal-overlay');
+    if (!cover) return;
+    cover.remove(); // Удалили оверлей
+    document.body.style.overflowY = ''; // Вернули прокрутку
+    const modalWindow = document.querySelector('.modal-container');
+    modalWindow.classList.toggle('hide-modal'); // Скрыли модалку
+}

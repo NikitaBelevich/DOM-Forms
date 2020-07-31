@@ -156,3 +156,71 @@ td {
 .calculator-out .before, .calculator-out .after {
   min-width: 146px;
 }
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 4px 8px 4px;
+  width: 280px;
+  z-index: 9999;
+  border: 1px solid #000;
+  background: #f1dfc9;
+  -webkit-transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out;
+}
+
+.modal-container__body {
+  width: 65%;
+  max-width: 75%;
+}
+
+.modal-form {
+  text-align: center;
+  font-size: 14px;
+}
+
+.modal-form > *:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.hide-modal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9000;
+  background-color: rgba(28, 28, 28, 0.62);
+  opacity: 0;
+  -webkit-animation: eazy-show-modal .3s ease-out forwards;
+          animation: eazy-show-modal .3s ease-out forwards;
+}
+
+@-webkit-keyframes eazy-show-modal {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes eazy-show-modal {
+  100% {
+    opacity: 1;
+  }
+}
