@@ -106,10 +106,13 @@ th {
     display: inline-block; 
     cursor: pointer; 
     margin: 0;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-color: #fff;
+    z-index: 100;
     &:focus{
         outline: none;
-        border: 1px dashed rgb(211, 16, 185);
+        border: 2px dashed rgb(211, 16, 185);
     }
 }
 

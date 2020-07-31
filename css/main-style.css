@@ -108,12 +108,15 @@ td {
   display: inline-block;
   cursor: pointer;
   margin: 0;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background-color: #fff;
+  z-index: 100;
 }
 
 #mouse:focus {
   outline: none;
-  border: 1px dashed #d310b9;
+  border: 2px dashed #d310b9;
 }
 
 .task4 {
